@@ -1,36 +1,48 @@
 ﻿#include "Metods.h"
+#include <cmath>
 
-// Конструктор за замовчуванням
-Rectangle::Rectangle() : x1(0), y1(0), x2(1), y2(1) {}
-// Конструктор з параметрами
-Rectangle::Rectangle(double x1, double y1, double x2, double y2)
-    : x1(x1), y1(y1), x2(x2), y2(y2) {}
-// Конструктор копіювання
-Rectangle::Rectangle(const Rectangle& other)
-    : x1(other.x1), y1(other.y1), x2(other.x2), y2(other.y2) {}
+Rectangle::Rectangle() : coords{0, 0, 1, 1} {}
+Rectangle::Rectangle(double x1, double y1, double x2, double y2) : coords{x1, y1, x2, y2} {}
+Rectangle::Rectangle(const Rectangle& other) : coords{other.coords} {}
 
 double Rectangle::area() const {
-    return abs((x2 - x1) * (y2 - y1));
+    return std::abs((coords[2] - coords[0]) * (coords[3] - coords[1]));
 }
 
 double Rectangle::perimeter() const {
-    return 2 * (abs(x2 - x1) + abs(y2 - y1));
+    return 2 * (std::abs(coords[2] - coords[0]) + std::abs(coords[3] - coords[1]));
 }
 
-Rectangle Rectangle::operator-(double value) const {
-    return Rectangle(x1, y1, x2 - value, y2 - value);
+void Rectangle::setCoordinates(double x1, double y1, double x2, double y2) {
+    coords = {x1, y1, x2, y2};
 }
 
-Rectangle Rectangle::operator/(double value) const {
-    return Rectangle(x1, y1, x1 + (x2 - x1) / value, y1 + (y2 - y1) / value);
-}
-
-Rectangle Rectangle::operator-(const Rectangle& other) const {
-    return Rectangle(x1 - other.x1, y1 - other.y1, x2 - other.x2, y2 - other.y2);
+void Rectangle::setCoordinates(const std::array<double, 4>& vertices) {
+    coords = vertices;
 }
 
 void Rectangle::display() const {
-    std::cout << "Прямокутник: (" << x1 << ", " << y1 << ") -> (" << x2 << ", " << y2 << ")" 
-              << " | Площа: " << area() << ", Периметр: " << perimeter() << std::endl;
+    std::cout << "Прямоугольник: (" << coords[0] << ", " << coords[1] << ") -> ("
+              << coords[2] << ", " << coords[3] << ")"
+              << " | Площадь: " << area()
+              << ", Периметр: " << perimeter()
+              << std::endl;
 }
+
+Rectangle Rectangle::operator/(double value) const {
+    return Rectangle(coords[0], coords[1],
+                     coords[0] + (coords[2] - coords[0]) / value,
+                     coords[1] + (coords[3] - coords[1]) / value);
+}
+
+Rectangle Rectangle::operator-(double value) const {
+    return Rectangle(coords[0], coords[1],
+                     coords[2] - value, coords[3] - value);
+}
+
+Rectangle Rectangle::operator-(const Rectangle& other) const {
+    return Rectangle(coords[0] - other.coords[0], coords[1] - other.coords[1],
+                     coords[2] - other.coords[2], coords[3] - other.coords[3]);
+}
+
 

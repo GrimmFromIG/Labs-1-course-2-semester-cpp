@@ -1,23 +1,28 @@
 ﻿#pragma once
 
+#include <array>
 #include <iostream>
 
 class Rectangle {
 private:
-    double x1, y1, x2, y2;
+    std::array<double, 4> coords;
 
 public:
-    Rectangle();  // За замовчуванням
-    Rectangle(double x1, double y1, double x2, double y2); // З параметрами
-    Rectangle(const Rectangle& other); // Конструктор копіювання
+    // Конструктори
+    Rectangle();
+    Rectangle(double x1, double y1, double x2, double y2);
+    Rectangle(const Rectangle& other);
     
-    double area() const;
-    double perimeter() const;
+    double area() const;      
+    double perimeter() const;  
     
-    Rectangle operator-(double value) const;  // "Зменшення" розміру
-    Rectangle operator/(double value) const;  // Ділення розміру
-    Rectangle operator-(const Rectangle& other) const;  // Віднімання прямокутників
+    void setCoordinates(double x1, double y1, double x2, double y2); 
+    void setCoordinates(const std::array<double, 4>& vertices);      
     
     void display() const;
+    
+    Rectangle operator/(double value) const;                      
+    Rectangle operator-(double value) const;                       
+    Rectangle operator-(const Rectangle& other) const;              
 };
 
