@@ -22,9 +22,9 @@ void Rectangle::setCoordinates(const std::array<double, 4>& vertices) {
 }
 
 void Rectangle::display() const {
-    std::cout << "Прямоугольник: (" << coords[0] << ", " << coords[1] << ") -> ("
+    std::cout << "Прямокутник: (" << coords[0] << ", " << coords[1] << ") -> ("
               << coords[2] << ", " << coords[3] << ")"
-              << " | Площадь: " << area()
+              << " | Площа: " << area()
               << ", Периметр: " << perimeter()
               << std::endl;
 }

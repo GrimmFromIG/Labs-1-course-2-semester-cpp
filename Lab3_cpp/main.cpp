@@ -24,7 +24,7 @@ int main() {
     Q2.display();
     
     Q1 = Q3 - Q2;
-    std::cout << "\nРезультат віданімання Q3 - Q2 -> Q1:\n";
+    std::cout << "\nРезультат віднімання Q3 - Q2 -> Q1:\n";
     Q1.display();
 
     return 0;
