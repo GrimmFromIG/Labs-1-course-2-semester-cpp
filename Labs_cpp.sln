@@ -12,6 +12,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab5_cpp", "Lab5_cpp\Lab5_c
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab6_cpp", "Lab6_cpp\Lab6_cpp.vcxproj", "{EFD88CCD-76AF-4009-9F0C-8C81B0D19E44}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab7_cpp", "Lab7_cpp\Lab7_cpp.vcxproj", "{FCC614B5-0EE5-48A6-A5B2-3D6E1541D363}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{EFD88CCD-76AF-4009-9F0C-8C81B0D19E44}.Debug|Any CPU.Build.0 = Debug|Win32
 		{EFD88CCD-76AF-4009-9F0C-8C81B0D19E44}.Release|Any CPU.ActiveCfg = Release|Win32
 		{EFD88CCD-76AF-4009-9F0C-8C81B0D19E44}.Release|Any CPU.Build.0 = Release|Win32
+		{FCC614B5-0EE5-48A6-A5B2-3D6E1541D363}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{FCC614B5-0EE5-48A6-A5B2-3D6E1541D363}.Debug|Any CPU.Build.0 = Debug|Win32
+		{FCC614B5-0EE5-48A6-A5B2-3D6E1541D363}.Release|Any CPU.ActiveCfg = Release|Win32
+		{FCC614B5-0EE5-48A6-A5B2-3D6E1541D363}.Release|Any CPU.Build.0 = Release|Win32
 	EndGlobalSection
 EndGlobal
